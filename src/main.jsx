@@ -9,6 +9,7 @@ import {
 import Root from './components/Root.jsx';
 import Onepup from './components/Onepup.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import SearchPage from './components/SearchPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "onePupp/:id",
         element: <Onepup />,
+      },
+      {
+        path: "search/:text",
+        element: <SearchPage />,
       }
     ],
   },

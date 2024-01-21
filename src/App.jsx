@@ -3,9 +3,11 @@ import './App.css'
 import getPuppy from './getPuppy'
 import deleteme from './deleteme'
 import addPuppy from './addPuppy'
-import { NavLink,Link } from 'react-router-dom'
+import { NavLink,Link, useLocation } from 'react-router-dom'
 
 function App() {
+  const location=useLocation();
+  console.log(location)
   const [puppy,setPuppy]=useState([]);
   let [c,setC]=useState(false);
   let [searchFlag,setSearchFlag]=useState(false);
@@ -28,7 +30,7 @@ function App() {
  
   useEffect(()=>{
     getPuppy().then(setPuppy); 
-    setSearchFlag(!searchFlag); 
+    if(searchFlag){setSearchFlag(!searchFlag)}; 
   },[addFlag,c]);
 
   if(puppy.length==0){
@@ -42,9 +44,9 @@ function App() {
   return (
     <>
     
-      <form>
-        <input onChange={(e)=>setSearchText(e.target.value)} placeholder='Search Players'/><button onClick={(e)=>{e.preventDefault(); searchFun()}}>Search</button>
-      </form>
+      <div>
+        <input onChange={(e)=>setSearchText(e.target.value)} placeholder='Search Players'/><Link state={puppy} to={`/search/${searchtext}`}>Search</Link>
+      </div>
       
       <form >
           <label>Name <input type="text" placeholder='Name' value={nameN} onChange={(e)=>setNameN(e.target.value)}/></label>
