@@ -33,7 +33,7 @@ function Onepup() {
                     <p>ID: {p.id}</p>
                     <p>Status: {p.status}</p>
                     <span>
-                    <Link to={`/`}><button className='bg-green-300 rounded-lg font-normal p-1 h-auto'>Go back!</button> </Link>
+                    <Link to={`/`}><button className='bg-green-300 rounded-lg font-normal p-1 h-auto'>Main page</button> </Link>
                     <button onClick={()=>{deleteme1(p.id)}} className='bg-amber-600 rounded-lg p-1'>Delete</button>
                     </span>
                 </div>
