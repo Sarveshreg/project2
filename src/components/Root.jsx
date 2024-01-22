@@ -6,7 +6,7 @@ import Footer from "./Footer"
 function Root() {
   return (
     <>
-    <Header/>
+    <Header />
     <Outlet/>
     <Footer/>
     </>

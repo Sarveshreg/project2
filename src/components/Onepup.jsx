@@ -19,25 +19,26 @@ function Onepup() {
     return (
     <>
 
-        {delFlag && <p>Player Deleted</p>}
+        {delFlag && <h2 className='text-red-800'>Player Deleted</h2>}
         
         {puppy.map((p)=>{
             if(p.id==id){
             return(
         <>
-        <div key={p.id} className="flex flex-row w-auto h-2/5 justify-center mt-3 bg-teal-100">
-                <img className='h-40 w-44 mt-4' src={`${p.imageUrl}`} alt="a dog" />
-                <div className=' flex flex-col m-5 text-lg font-bold p-1'>
-                    <p>Name: {p.name}</p>
+        <div key={p.id} className=" flex-wrap flex flex-col p-2 w-fit h-fit m-auto shadow-2xl border-green-400 border-4  hover:border-red-600 rounded-lg">
+                <img className='h-72 w-96' src={`${p.imageUrl}`} alt="a dog" />
+                <div className='flex flex-col m-auto text-lg font-bold '>
+                    <p >Name: {p.name}</p>
                     <p>Breed: {p.breed}</p>
                     <p>ID: {p.id}</p>
                     <p>Status: {p.status}</p>
-                    <span>
-                    <Link to={`/`}><button className='bg-green-300 rounded-lg font-normal p-1 h-auto'>Main page</button> </Link>
-                    <button onClick={()=>{deleteme1(p.id)}} className='bg-amber-600 rounded-lg p-1'>Delete</button>
+                    <span className='flex flex-row gap-3'>
+                    <Link to={`/`}><button >Home Page</button> </Link>
+                    <button onClick={()=>{deleteme1(p.id)}} className='bg-red-400 rounded-lg p-1 hover:bg-red-500 active:bg-red-700'>Delete</button>
                     </span>
                 </div>
             </div>
+        
         </>
     )}})}
     </>
