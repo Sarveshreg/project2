@@ -29,7 +29,8 @@ const router = createBrowserRouter([
       {
         path: "search/:text",
         element: <SearchPage />,
-      }
+      },
+      
     ],
   },
 ]);
